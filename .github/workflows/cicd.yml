@@ -1,0 +1,19 @@
+name: CI/CD pipeline
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  jobs:
+    code_quality_check:
+      name: code_quality_check
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: linting
+          run: |
+            npm run lint
+    build:
+    deployment:
