@@ -31,7 +31,7 @@ jobs:
         run: |
           echo "comming soon"
   deployment:
-    name: build
+    name: deployment
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
