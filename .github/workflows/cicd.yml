@@ -17,6 +17,9 @@ jobs:
         run: |
           npm ci
           npm run lint
+      - name: npm audit
+        run: |
+          npm audit
   build:
     name: build
     runs-on: ubuntu-latest
