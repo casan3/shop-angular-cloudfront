@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatCardModule } from '@angular/material/card';
+import { CartCountControlsModule } from '../../core/cart-count-controls/cart-count-controls.module';
 
 import { ProductItemCheckoutComponent } from './product-item-checkout.component';
 
@@ -8,6 +10,7 @@ describe('CartProductItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [MatCardModule, CartCountControlsModule],
       declarations: [ProductItemCheckoutComponent],
     }).compileComponents();
   });
@@ -15,6 +18,15 @@ describe('CartProductItemComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductItemCheckoutComponent);
     component = fixture.componentInstance;
+    component.product = {
+      title: '',
+      orderedCount: 0,
+      totalPrice: 0,
+      count: 0,
+      description: '',
+      id: '',
+      price: 0,
+    };
     fixture.detectChanges();
   });
 

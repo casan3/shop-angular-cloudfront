@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatTableModule } from '@angular/material/table';
 import { OrdersComponent } from './orders.component';
+import { OrdersService } from './orders.service';
 
 describe('ManageOrdersComponent', () => {
   let component: OrdersComponent;
@@ -8,6 +9,13 @@ describe('ManageOrdersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [MatTableModule],
+      providers: [
+        {
+          provide: OrdersService,
+          useValue: jasmine.createSpyObj('OrdersService', ['getOrders']),
+        },
+      ],
       declarations: [OrdersComponent],
     }).compileComponents();
   });

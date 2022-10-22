@@ -1,11 +1,18 @@
 import { TestBed } from '@angular/core/testing';
+import { NotificationService } from '../notification.service';
 
 import { ErrorPrintInterceptor } from './error-print.interceptor';
 
 describe('ErrorPrintInterceptor', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      providers: [ErrorPrintInterceptor],
+      providers: [
+        ErrorPrintInterceptor,
+        {
+          provide: NotificationService,
+          useValue: jasmine.createSpyObj('NotificationService', ['']),
+        },
+      ],
     })
   );
 

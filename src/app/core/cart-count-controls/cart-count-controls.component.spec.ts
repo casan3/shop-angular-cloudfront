@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { CartCountControlsComponent } from './cart-count-controls.component';
 
@@ -8,6 +10,7 @@ describe('CartCountControlsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [MatIconModule, MatTooltipModule],
       declarations: [CartCountControlsComponent],
     }).compileComponents();
   });
