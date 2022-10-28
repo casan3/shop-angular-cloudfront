@@ -12,7 +12,8 @@
     "e2e": "ng e2e",
     "prepare": "husky install",
     "lint:format": "npx --no-install lint-staged && npx --no-install pretty-quick --staged",
-    "static:local": "docker run --rm -e SONAR_HOST_URL=\"http://host.docker.internal:9000\" -e SONAR_SCANNER_OPTS=\"-Dsonar.projectKey=shop-angular\" -e SONAR_LOGIN=\"sqp_12440acb2ff317a89c7583350bdc8ab4e81fd0f8\" -v \"/home/carlos/projects/EPAM/Courses/devops-fundamentals-labs/lab_3/shop-angular-cloudfront:/usr/src\" sonarsource/sonar-scanner-cli"
+    "static:local": "docker run --rm -e SONAR_HOST_URL=\"http://host.docker.internal:9000\" -e SONAR_SCANNER_OPTS=\"-Dsonar.projectKey=shop-angular\" -e SONAR_LOGIN=\"sqp_12440acb2ff317a89c7583350bdc8ab4e81fd0f8\" -v \"/home/carlos/projects/EPAM/Courses/devops-fundamentals-labs/lab_3/shop-angular-cloudfront:/usr/src\" sonarsource/sonar-scanner-cli",
+    "cicd:local": "./scripts/local_ci_cd.sh"
   },
   "private": true,
   "dependencies": {
