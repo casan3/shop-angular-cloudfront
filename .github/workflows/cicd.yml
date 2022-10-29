@@ -50,6 +50,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: app-artifact
+          path: dist
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -57,6 +58,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: deploying app to s3
+        working-directory: dist
         run: |
           run: |
           aws s3 sync . s3://cas-s3-bucket-devops-epam-course
