@@ -57,7 +57,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: deploying app to s3
-        working-directory: dist/app
         run: |
           run: |
           aws s3 sync . s3://cas-s3-bucket-devops-epam-course
